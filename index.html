@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Where do I rank on Google</title>
+<meta name="description" content="Where do I rank? Is a free keyword search engine rank page checker tool or SERP to help you easily find what page number your websites ranks in the google search engine.">
+<meta name="keywords" content="serp,google,keyword rank checker,page rank,seo">
+<meta name="author" content="Steve DiGirolamo">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/excite-bike/jquery-ui.min.css">
+<link rel="stylesheet" href="stylesheets/base.css">
+<link rel="stylesheet" href="stylesheets/skeleton.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$().ready(function(e) {
+	$('#search').on('click',function(){
+		$('#results').html('Please wait while we search...it may take up to 60 seconds to complete your search.');
+		$.post('google.php',{d:$('#domain').val(),k:$('#keywords').val()},function(data){
+			$('#results').html(data);
+		});
+	});
+});
+</script>
+</head>
+<body id="home">
+<div class="container">
+  <div class="seven columns">
+    <h1 class="remove-bottom">Where do I rank?</h1>
+    <h4>On Google&nbsp;<span class="g-plusone" data-size="small"></span></h4>
+    <hr />
+  </div>
+  <div class="sixteen columns">
+    <h3>About</h3>
+    <p>The purpose of this tool is to easily find your <strong>SERP Ranking - </strong> meaning what page number your domain falls under in the google search engine. I wrote this tool in hopes that it would help some people easily determine what page they are ranked on. As of right now it will only go 10 pages deep into the google results.</p>
+  </div>
+  <div class="eleven columns">
+    <h3>Two Easy Steps</h3>
+    <ul class="disc">
+      <li><b>Enter your domain name</b>: please leave off http:// and https://</li>
+    </ul>
+    <input type="text" placeholder="enter your domain" id="domain">
+    <ul class="disc">
+      <li><b>Keywords</b>: this is the same thing as one of your vistors might type in the google search box</li>
+    </ul>
+    <input type="text" placeholder="enter your keywords" id="keywords">
+    <button id="search">Find Search Engine Page Rank</button>
+  </div>
+  <div class="five columns"><script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+    <!-- where do i rank side --> 
+    <ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-5582628226678800"
+     data-ad-slot="3430778177"></ins> 
+    <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+  <div class="sixteen columns add-bottom" id="results"> </div>
+  <div class="eleven columns" id="footer">&copy; Steve DiGirolamo of <a href="http://arizonawebdevelopment.com" target="_blank">Arizona Web Development</a> <span class="warning">* this website is not related with google in any way shape or form</span>
+  </div>
+</div>
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</body>
+</html>
